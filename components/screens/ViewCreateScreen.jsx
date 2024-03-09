@@ -8,7 +8,7 @@ const ViewCreateScreen = ({
             <View style={styles.buttonContainer}>
                 <Button style={styles.button}
                     title="Create Appeal"
-                    //onPress={() => navigation.navigate("CreateAppeal")}  
+                    onPress={() => navigation.navigate("AppealMake")}  
                 />
                 <Button style={styles.button}
                     title="View"

@@ -5,6 +5,8 @@ import SignupScreen from './components/screens/SignupScreen';
 import AppealListScreen from './components/screens/AppealListScreen';
 import AppealScreen from './components/screens/AppealScreen';
 import ViewCreateScreen from './components/screens/ViewCreateScreen';
+import AppealMakeScreen from './components/screens/AppealMakeScreen';
+import AppealLocationScreen from './components/screens/AppealLocationScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -20,6 +22,8 @@ const App = () => {
         <Stack.Screen name="ViewCreate" component={ViewCreateScreen} />
         <Stack.Screen name="AppealList" component={AppealListScreen} />
         <Stack.Screen name="Appeal" component={AppealScreen} />
+        <Stack.Screen name="AppealMake" component={AppealMakeScreen} />
+        <Stack.Screen name="AppealLocation" component={AppealLocationScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
