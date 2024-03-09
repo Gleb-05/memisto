@@ -12,7 +12,7 @@ const AppealMakeScreen = ({
     navigation,
 }) => {
     const handleAppealPress = (item) => {
-        navigation.navigate("AppealLocation", { item: item });
+        navigation.navigate("AppealLocation", { problem: item });
     }
 
     const renderItem = ({ item }) => {
@@ -28,7 +28,7 @@ const AppealMakeScreen = ({
             <FlatList style={styles.list}
                 data={problems}
                 renderItem={renderItem}
-                keyExtractor={(item, index) => index.toString()}
+                keyExtractor={(item, _) => item.id}
             />
         </View>
     );

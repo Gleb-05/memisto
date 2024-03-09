@@ -1,6 +1,7 @@
 import map from '../../assets/map.png';
-import { View, ImageBackground, StyleSheet } from 'react-native';
+import { View, ImageBackground, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 
+// should be fetched by problemID - draw only relevant points
 const points = [
     { id: 1, problemID: 1, coordinate: { latitude: 37.78825, longitude: -122.4324 } },
     { id: 2, problemID: 1, coordinate: { latitude: 37.75825, longitude: -122.4624 } },
@@ -8,8 +9,11 @@ const points = [
 
 const AppealLocationScreen = ({
     navigation,
-    problem,
+    route,
 }) => {
+    const {problem} = route.params;
+    // fetch points by problemID
+
     const randHW = () => { 
         const hmax= 500; 
         const wmax = 800; 
@@ -20,12 +24,14 @@ const AppealLocationScreen = ({
         return {top: randH + 'px', left: randW + 'px'}
     };
 
-    const handlePointPress = (item, point) => {
-        // navigation.navigate("AppealChoice", { item: item, point: point});
+    const handlePointPress = (point) => {
+        navigation.navigate("AppealChoice", { point: point, problem: problem});
     }
 
     const drawpoints = points.map((point, _) => ( // randHW in style is a MAJOR stub for coordinate use
-    <View key={point.id} style={[styles.circle, randHW()]} onClick={() => handlePointPress(item, point)}></View>
+    <TouchableWithoutFeedback key={point.id} onPressIn={() => handlePointPress(point)}>
+        <View style={[styles.circle, randHW()]}></View>
+    </TouchableWithoutFeedback>
     ))
 
     return (

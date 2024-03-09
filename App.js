@@ -7,6 +7,8 @@ import AppealScreen from './components/screens/AppealScreen';
 import ViewCreateScreen from './components/screens/ViewCreateScreen';
 import AppealMakeScreen from './components/screens/AppealMakeScreen';
 import AppealLocationScreen from './components/screens/AppealLocationScreen';
+import AppealChoiceScreen from './components/screens/AppealChoiceScreen';
+import AppealSuccessScreen from './components/screens/AppealSuccessScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -24,6 +26,8 @@ const App = () => {
         <Stack.Screen name="Appeal" component={AppealScreen} />
         <Stack.Screen name="AppealMake" component={AppealMakeScreen} />
         <Stack.Screen name="AppealLocation" component={AppealLocationScreen} />
+        <Stack.Screen name="AppealChoice" component={AppealChoiceScreen} />
+        <Stack.Screen name="AppealSuccess" component={AppealSuccessScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
